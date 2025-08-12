@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Step 2 CK Pixel Scene Test</title>
+<style>
+  body {
+    margin: 0;
+    background-color: #a0d8f1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    font-family: 'Press Start 2P', monospace;
+  }
+  .scene {
+    position: relative;
+    width: 800px;
+    height: 450px;
+    overflow: hidden;
+    background: url('data:image/png;base64,INSERT_BASE64_PIXEL_OFFICE') no-repeat center/cover;
+  }
+  /* Clock */
+  .clock {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 48px;
+    height: 48px;
+    background: url('data:image/png;base64,INSERT_BASE64_CLOCK') no-repeat center/contain;
+  }
+  .clock-hand {
+    position: absolute;
+    top: 24px;
+    left: 24px;
+    width: 2px;
+    height: 16px;
+    background: black;
+    transform-origin: bottom center;
+    animation: tick 1s steps(1) infinite;
+  }
+  @keyframes tick {
+    0% { transform: rotate(0deg); }
+    50% { transform: rotate(6deg); }
+    100% { transform: rotate(0deg); }
+  }
+  /* Plant */
+  .plant {
+    position: absolute;
+    bottom: 10px;
+    left: 20px;
+    width: 64px;
+    height: 96px;
+    background: url('data:image/png;base64,INSERT_BASE64_PLANT') no-repeat center/contain;
+    animation: sway 3s ease-in-out infinite;
+  }
+  @keyframes sway {
+    0% { transform: rotate(0deg); }
+    50% { transform: rotate(2deg); }
+    100% { transform: rotate(0deg); }
+  }
+  /* Doctor */
+  .doctor {
+    position: absolute;
+    bottom: 50px;
+    left: -150px;
+    width: 128px;
+    height: 192px;
+    background: url('data:image/png;base64,INSERT_BASE64_DOCTOR') no-repeat center/contain;
+    animation: doctorEnter 2.5s forwards;
+  }
+  @keyframes doctorEnter {
+    to { left: 50px; }
+  }
+  /* Patient */
+  .patient {
+    position: absolute;
+    bottom: 50px;
+    right: 80px;
+    width: 128px;
+    height: 192px;
+    background: url('data:image/png;base64,INSERT_BASE64_PATIENT') no-repeat center/contain;
+  }
+</style>
+</head>
+<body>
+  <div class="scene">
+    <div class="clock">
+      <div class="clock-hand"></div>
+    </div>
+    <div class="plant"></div>
+    <div class="doctor"></div>
+    <div class="patient"></div>
+  </div>
+</body>
+</html>
